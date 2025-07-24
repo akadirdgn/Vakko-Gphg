@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reservation</title>
+    <link rel="stylesheet" href="ReservationForm.css" />
+  </head>
+
+  <body>
+    <div class="reservation-container">
+      <section class="reservation-header">
+        <img
+          src="../images/rezervation.png"
+          alt="Top Decoration"
+          class="reservation-bg-image"
+        />
+      </section>
+
+      <section
+        class="reservation-form-section"
+        id="reservation-scroll-point"
+        data-step="1"
+      >
+        <h2 class="reservation-title">RESERVATION</h2>
+
+        <div class="steps">
+          <span class="step active" data-target="#reservation-scroll-point"
+            >① INFORMATION</span
+          >
+          <span class="divider"></span>
+          <span class="step" data-target="#step-2">② VERIFICATION</span>
+        </div>
+
+        <form class="reservation-form" onsubmit="handleSubmit(event)">
+          <div class="form-row">
+            <input type="text" placeholder="Name" />
+            <input type="text" placeholder="Surname" />
+          </div>
+          <input type="tel" placeholder="Mobile" />
+          <input type="email" placeholder="E-mail" />
+
+          <div class="form-row">
+            <div class="visitors-select">
+              <label>Number of visitors</label>
+              <select>
+                <option value="1">1</option>
+                <option value="2">2</option>
+              </select>
+              <p class="info-text">
+                Reservations are possible for up to 2 persons for each e-mail<br />
+                address or phone number provided.
+              </p>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="date-input-horizontal">
+              <label>📅 Date</label>
+              <input type="date" value="2025-10-19" />
+            </div>
+            <div class="time-input-horizontal">
+              <label>🕒 Time</label>
+              <input type="text" value="08:00 - 09:00" />
+            </div>
+          </div>
+
+          <p class="consent-info">
+            Before submitting, please check the information below and make sure <br />
+            that the information you have provided matches your booking details.
+          </p>
+
+          <div class="consent-checkbox">
+            <input type="checkbox" id="consent" />
+            <label for="consent" class="underline">
+              I consent to be contacted by Vakko Textil via the channels
+              specified below, and I have read and understood the Disclosure
+              Statement.
+            </label>
+          </div>
+
+          <div class="channels">
+            <label><input type="checkbox" /> E-Mail</label>
+            <label><input type="checkbox" /> SMS</label>
+            <label><input type="checkbox" /> Phone</label>
+            <label><input type="checkbox" /> Whatsapp</label>
+          </div>
+
+          <div class="button-container">
+            <button type="submit" class="submit-button">SUBMIT</button>
+          </div>
+        </form>
+      </section>
+
+      <section
+        class="reservation-form-section"
+        id="step-2"
+        style="display: none"
+      >
+        <h2 class="reservation-title">RESERVATION</h2>
+
+        <div class="steps">
+          <span class="step">① INFORMATION</span>
+          <span class="divider"></span>
+          <span class="step active">② VERIFICATION</span>
+        </div>
+
+        <form class="reservation-form" onsubmit="handleSubmit(event)">
+          <p class="verification-instruction">Enter Verification Code</p>
+          <p class="verification-info">
+            Please enter the confirmation code we sent via SMS to <br />
+            your mobile phone at <strong>0554 543 21 00</strong>.
+          </p>
+
+          <div class="timer-container">
+            <svg width="120" height="120">
+              <circle
+                cx="60"
+                cy="60"
+                r="54"
+                stroke-width="4"
+                class="circle-bg"
+                fill="none"
+              />
+              <circle
+                cx="60"
+                cy="60"
+                r="54"
+                stroke-width="4"
+                class="circle-progress"
+                fill="none"
+                stroke-dasharray="339.292"
+                stroke-dashoffset="0"
+              />
+            </svg>
+            <div class="time-text" id="time">01:00</div>
+          </div>
+
+          <input
+            type="text"
+            class="verification-input"
+            placeholder="Verification Code"
+          />
+
+          <p class="resend-code">
+            <a href="#">Resend Verification Code</a>
+          </p>
+
+          <div class="button-container">
+            <button class="submit-button">SUBMIT</button>
+          </div>
+        </form>
+      </section>
+
+      <section
+        class="reservation-form-success"
+        id="step-3"
+        style="display: none"
+      >
+        <h2 class="reservation-title">RESERVATION</h2>
+
+        <div class="steps">
+          <span class="step">① INFORMATION</span>
+          <span class="divider"></span>
+          <span class="step active">② VERIFICATION</span>
+        </div>
+        <div class="reservation-success">
+          <img
+            src="../images/success.png"
+            alt="Success Icon"
+            class="success-icon"
+          />
+          <p class="verification-success">
+            Your reservation code has been sent <br />
+            to your phone via SMS.
+          </p>
+        </div>
+      </section>
+
+      <section
+        class="reservation-form-content"
+        id="step-4"
+        style="display: none"
+      >
+        <h2 class="reservation-title">RESERVATION</h2>
+
+        <div class="steps">
+          <span class="step">① INFORMATION</span>
+          <span class="divider"></span>
+          <span class="step active">② VERIFICATION</span>
+        </div>
+        <div class="content" onsubmit="handleSubmit(event)">
+          <p>Dear Lorem Ipsum,</p>
+          <p>
+            Thank you for reserving your admission for the 25th edition <br />
+            of the GPHG exhibition at Vakko Hotel Sumahan Bosphorus.
+          </p>
+
+          <p>Your reservation details are follows:</p>
+
+          <p class="bold">Date & Time: 19 October, 2025 | 09:00–10:00</p>
+          <p class="bold">Number of visitors: 2</p>
+
+          <p class="small">
+            You can verify the email address you provided when registering.
+          </p>
+          <a href="#" class="verify-link">Verify E-mail</a>
+
+          <button id="back-to-info" class="back-button">
+            BACK TO INFORMATION
+          </button>
+        </div>
+      </section>
+
+      <section class="reservation-section">
+        <img
+          src="../images/VakkoContent.png"
+          alt="Bottom Decoration"
+          class="reservation-bg-image"
+        />
+      </section>
+    </div>
+
+    <script src="ReservationForm.js"></script>
+  </body>
+</html>
