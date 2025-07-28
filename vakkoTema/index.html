@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>GP Exhibition 2025</title>
+  <link rel="stylesheet" href="css/header.css" />
+  <link rel="stylesheet" href="css/content.css" />
+  <link rel="stylesheet" href="css/reservationForm.css" />
+</head>
+
+<body>
+  <div id="header-container"></div>
+
+  <div id="content-wrapper"></div>
+
+  <div id="reservation-form-container"></div>
+
+  <div id="reservation-scroll-point"></div>
+
+  <script>
+    function loadComponent(htmlPath, containerId, jsPath) {
+      fetch(htmlPath)
+        .then(response => response.text())
+        .then(html => {
+          document.getElementById(containerId).innerHTML = html;
+        })
+        .then(() => {
+          if (jsPath) {
+            const script = document.createElement('script');
+            script.src = jsPath;
+            document.body.appendChild(script);
+          }
+        })
+        .catch(err => console.error(`${containerId} yüklenirken hata:`, err));
+    }
+
+    loadComponent('html/header.html', 'header-container', 'js/header.js');
+    loadComponent('html/content.html', 'content-wrapper', 'js/content.js');
+    loadComponent('html/reservationForm.html', 'reservation-form-container', 'js/reservationForm.js');
+  </script>
+</body>
+
+</html>
