@@ -1,0 +1,458 @@
+﻿* {
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    max-width: 100%;
+    overflow-x: hidden;
+    font-family: "Termina Test", sans-serif;
+    height: 100%;
+}
+
+@font-face {
+    font-family: "Termina Test";
+    src: url("https://db.onlinewebfonts.com/t/2f49770b35d9cc1a527beef9feb36ec8.woff2") format("woff2");
+    font-weight: normal;
+    font-style: normal;
+}
+
+.header-container {
+    position: relative;
+    background-color: #002952;
+    color: white;
+    text-align: center;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.mask-group {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.header-inner {
+    position: relative;
+    z-index: 2;
+    max-width: 1200px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header-top-bar {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    font-size: 14px;
+    color: #ccc;
+    margin-bottom: 10px;
+}
+
+.gphg-logo-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.gphg-logo {
+    width: 150px;
+    max-width: 90%;
+}
+
+.header-title {
+    font-size: clamp(24px, 5vw, 40px);
+    font-weight: bold;
+    line-height: 1.4;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.header-dates,
+.header-location {
+    font-size: 18px;
+    margin: 13px 0;
+    font-weight: 500;
+}
+
+.presented-by {
+    margin-top: 25px;
+    font-size: 15px;
+    letter-spacing: 2px;
+    opacity: 0.8;
+}
+
+.vakko-logo {
+    width: 200px;
+    margin: 15px auto 30px;
+}
+
+.logo-group {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.footer-logos-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.footer-logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.fgp-logo img {
+    max-height: 50px;
+    object-fit: contain;
+}
+
+.vakkoHotel-logo img {
+    max-height: 50px;
+    object-fit: contain;
+    order: 2;
+}
+
+.reserve-buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.reserve-button,
+.view-button {
+    font-family: "Termina Test", sans-serif;
+    background-color: white;
+    color: #061e3a;
+    border: none;
+    padding: 14px 20px;
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 285px;
+}
+
+/* Tablet */
+@media (max-width: 992px) {
+    .footer-logos {
+        gap: 40px;
+    }
+
+    .vakko-logo {
+        width: 180px;
+    }
+
+    .gphg-logo {
+        width: 130px;
+    }
+
+    .reserve-button,
+    .view-button {
+        width: 100%;
+        max-width: 280px;
+    }
+
+    .header-dates,
+    .header-location {
+        font-size: 1rem;
+    }
+
+    .presented-by {
+        font-size: 0.9rem;
+    }
+
+    .gphg-logo-container {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 5px;
+    }
+}
+
+/* Mobil */
+@media (max-width: 768px) {
+    .header-title {
+        font-size: 1.2rem;
+    }
+
+    .vakko-logo {
+        width: 120px;
+        margin-top: 10px;
+        margin-bottom: 25px;
+    }
+
+    .footer-logos {
+        flex-direction: column;
+        gap: 5px;
+        align-items: center;
+    }
+
+    .logo-group {
+        flex-direction: row;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .gphg-logo {
+        width: 100px;
+    }
+
+    .header-top-bar {
+        justify-content: end;
+    }
+
+    .reserve-buttons {
+        padding: 0 15px;
+        gap: 10px;
+        order: 1;
+    }
+
+    .reserve-button,
+    .view-button {
+        width: 100%;
+        font-size: 10px;
+        padding: 10px 15px;
+    }
+
+    .fgp-logo img,
+    .vakkoHotel-logo img {
+        display: none;
+    }
+
+    .header-container {
+        padding: 20px 24px;
+        padding-bottom: 60px;
+    }
+
+    .header-inner {
+        padding: 16px;
+        max-width: 100%;
+    }
+
+    .header-dates,
+    .header-location {
+        font-size: 0.9rem;
+        margin: 0;
+        margin-bottom: 8px;
+    }
+
+    .presented-by {
+        font-size: 0.7rem;
+    }
+
+    .gphg-logo-container {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 5px;
+    }
+}
+
+@media (max-width: 380px) {
+    .header-title {
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+
+    .vakko-logo {
+        margin-top: 0px;
+        width: 120px;
+    }
+
+    .gphg-logo {
+        width: 25svh;
+        margin-bottom: 15px;
+    }
+
+    .reserve-button,
+    .view-button {
+        width: 100%;
+        font-size: 10px;
+        padding: 10px 15px;
+    }
+
+    .fgp-logo img,
+    .vakkoHotel-logo img {
+        display: none;
+    }
+
+    .header-container {
+        padding: 16px 16px;
+        padding-bottom: 60px;
+    }
+
+    .header-inner {
+        padding: 12px;
+        padding-bottom: 50px;
+        max-width: 100%;
+    }
+
+    .header-dates,
+    .header-location {
+        font-size: 14px;
+        margin: 0;
+        margin-bottom: 8px;
+    }
+
+    .presented-by {
+        font-size: 0.7rem;
+    }
+
+    .gphg-logo-container {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 5px;
+    }
+}
+
+@media (min-width: 381px) and (max-width: 480px) {
+    .header-title {
+        font-size: 1.5rem;
+    }
+
+    .header-container {
+        padding: 20px 24px;
+        padding-bottom: 120px;
+    }
+
+    .header-inner {
+        padding: 16px;
+        max-width: 100%;
+        gap: 10px;
+    }
+
+    .header-top-bar {
+        justify-content: flex-end;
+    }
+
+    .gphg-logo {
+        width: 75%;
+        margin-bottom: 10px;
+    }
+
+    .vakko-logo {
+        width: 160px;
+        margin-top: 10px;
+        margin-bottom: 25px;
+    }
+
+    .reserve-buttons {
+        padding: 0 15px;
+        gap: 15px;
+        order: 1;
+    }
+
+    .reserve-button,
+    .view-button {
+        width: 100%;
+        font-size: 12px;
+        padding: 10px 15px;
+    }
+
+    .header-dates,
+    .header-location {
+        font-size: 1.0rem;
+        margin: 0;
+        margin-bottom: 8px;
+    }
+
+    .presented-by {
+        font-size: 0.9rem;
+        margin-bottom: 0;
+        margin-top: 10px;
+    }
+
+    .gphg-logo-container {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 5px;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1139px) {
+    .footer-logos {
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
+        width: 90%;
+    }
+
+    .reserve-buttons {
+        flex-direction: row;
+        flex: 1;
+        justify-content: center;
+        gap: 10px;
+        max-width: 320px;
+    }
+
+    .reserve-button,
+    .view-button {
+        font-size: 12px;
+        padding: 10px;
+        width: 100%;
+    }
+
+    .vakkoHotel-logo img,
+    .fgp-logo img {
+        max-height: 40px;
+    }
+
+    .header-title {
+        font-size: 1.4rem;
+    }
+
+    .header-dates,
+    .header-location {
+        font-size: 1rem;
+    }
+
+    .presented-by {
+        font-size: 0.9rem;
+    }
+
+    .gphg-logo-container {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 5px;
+    }
+}
+
+
+.lang-link {
+    all: unset;
+    cursor: pointer;
+    color: #ccc;
+    font-size: 14px;
+    font-weight: 300;
+    margin: 0 4px;
+}
+
+    .lang-link:hover {
+        text-decoration: underline;
+    }
+
+.active-lang {
+    color: #fff;
+    font-weight: 500;
+}

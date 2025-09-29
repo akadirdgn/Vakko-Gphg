@@ -1,0 +1,839 @@
+@font-face {
+    font-family: "Termina Test";
+    src: url("https://db.onlinewebfonts.com/t/2f49770b35d9cc1a527beef9feb36ec8.eot");
+    src: url("https://db.onlinewebfonts.com/t/2f49770b35d9cc1a527beef9feb36ec8.eot?#iefix") format("embedded-opentype"), url("https://db.onlinewebfonts.com/t/2f49770b35d9cc1a527beef9feb36ec8.woff2") format("woff2"), url("https://db.onlinewebfonts.com/t/2f49770b35d9cc1a527beef9feb36ec8.woff") format("woff"), url("https://db.onlinewebfonts.com/t/2f49770b35d9cc1a527beef9feb36ec8.ttf") format("truetype"), url("https://db.onlinewebfonts.com/t/2f49770b35d9cc1a527beef9feb36ec8.svg#Termina Test") format("svg");
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: "Termina Test", sans-serif;
+    background-color: #f5f5f5;
+}
+
+input[type="checkbox"] {
+    accent-color: black;
+    width: 12px;
+    cursor: pointer;
+}
+
+.channels label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.reservation-container {
+    font-family: "Termina Test", sans-serif;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+.reservation-section {
+    font-family: "Termina Test", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.reservation-bg-image {
+    width: 100%;
+    display: block;
+    position: relative;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.reservation-form-section {
+    font-family: "Termina Test", sans-serif;
+    padding: 40px 10px;
+    max-width: 1000px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.reservation-form-success {
+    font-family: "Termina Test", sans-serif;
+    padding: 40px 20px 282px;
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.reservation-form-content {
+    font-family: "Termina Test", sans-serif;
+    padding: 40px 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+    margin-bottom: 95px;
+}
+
+.reservation-title {
+    font-family: "Termina Test", sans-serif;
+    justify-content: center;
+    align-items: center;
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    display: flex;
+}
+
+.steps {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 60px;
+}
+
+.step {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+    .step.active {
+        color: black;
+        text-decoration: underline;
+        font-size: 18px;
+    }
+
+    .step:not(.active) {
+        color: gray;
+    }
+
+.divider {
+    width: 130px;
+    height: 1px;
+    background-color: #aaa;
+    margin: 0 15px;
+}
+
+.reservation-form {
+    font-family: "Termina Test", sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-row {
+    font-family: "Termina Test", sans-serif;
+    display: flex;
+    justify-content: flex-start;
+    gap: 130px;
+    margin-top: 20px;
+}
+
+    .form-row label {
+        font-size: 14px;
+        margin-bottom: 5px;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        font-weight: 500;
+    }
+
+    .form-row input,
+    .form-row select {
+        padding: 6px 10px;
+        font-size: 14px;
+        width: 375px;
+        box-sizing: border-box;
+        border: 1px solid #000;
+    }
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+select {
+    font-family: "Termina Test", sans-serif;
+    background-color: transparent;
+    padding: 12px 8px;
+    font-size: 16px;
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid #000;
+    border-radius: 0;
+    outline: none;
+    box-shadow: none;
+}
+
+input[class="verification-input"],
+select {
+    font-family: "Termina Test", sans-serif;
+    font-size: 12px;
+    padding: 8px;
+    max-width: 350px;
+    margin: 0 auto;
+    display: block;
+    border: none;
+    border-bottom: 2px solid #888888;
+    border-radius: 0;
+}
+
+.verification-input {
+    font-family: "Termina Test", sans-serif;
+    padding: 12px;
+    font-size: 12px;
+    width: 100%;
+    max-width: 350px;
+    border: none;
+    border-bottom: 2px solid #000;
+    border-radius: 0;
+}
+
+.visitors-select {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+    .visitors-select label {
+        white-space: nowrap;
+        margin: 0;
+        padding-top: 6px;
+        padding-right: 5px;
+    }
+
+    .visitors-select select {
+        width: 80px;
+        border: 2px solid #000;
+        font-size: 14px;
+        padding: 4px 6px;
+        margin: 0;
+    }
+
+    .visitors-select .info-text {
+        font-size: 12px;
+        color: #444;
+        margin: 0;
+        font-weight: bold;
+    }
+
+.date-input,
+.time-input {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 350px;
+}
+
+label {
+    font-size: 14px;
+    margin-bottom: 4px;
+    color: #000;
+}
+
+.consent-info {
+    font-size: 12px;
+    margin-top: 40px;
+    color: #333;
+    display: flex;
+    justify-content: center;
+}
+
+.consent-checkbox {
+    display: flex;
+    align-items: flex-start;
+    font-size: 12px;
+    text-align: left;
+    max-width: 700px;
+    margin: 0 auto;
+    gap: 10px;
+}
+
+.channels {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+}
+
+.submit-button {
+    font-family: "Termina Test", sans-serif;
+    text-align: center;
+    background-color: black;
+    color: white;
+    padding: 20px 145px;
+    font-size: 12px;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+.date-input-horizontal,
+.time-input-horizontal {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    min-width: 400px;
+    max-width: 450px;
+}
+
+    .date-input-horizontal label,
+    .time-input-horizontal label {
+        white-space: nowrap;
+        font-size: 15px;
+        min-width: 60px;
+    }
+
+    .date-input-horizontal input,
+    .time-input-horizontal select {
+        padding: 6px 10px;
+        font-size: 14px;
+        width: 375px;
+        box-sizing: border-box;
+        border: 1px solid #000;
+        margin: 0;
+    }
+
+label.underline {
+    margin-top: -3px;
+    text-decoration: underline;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.verification-instruction {
+    font-size: 14px;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.verification-info {
+    font-size: 12px;
+    margin-top: 20px;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 80px;
+}
+
+.verification-success {
+    font-size: 12px;
+    margin-top: 20px;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 110px;
+}
+
+.countdown-container {
+    position: relative;
+    width: 150px;
+    height: 150px;
+}
+
+.countdown-circle {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: conic-gradient(#4caf50 0deg, #ddd 0deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    font-weight: bold;
+    font-family: sans-serif;
+    color: #333;
+}
+
+.countdown-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.timer-container {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    margin: 20px auto;
+}
+
+    .timer-container svg {
+        transform: rotate(-90deg);
+    }
+
+.circle-bg {
+    stroke: #d3d3d3;
+}
+
+.circle-progress {
+    stroke: #000;
+    transition: stroke-dashoffset 1s linear;
+}
+
+.time-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 15px;
+    font-weight: bold;
+    color: #000;
+    line-height: 1;
+}
+
+.resend-code {
+    font-size: 12px;
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+.step.active {
+    font-weight: bold;
+    color: black;
+    text-decoration: underline;
+}
+
+.step:not(.active) {
+    color: gray;
+}
+
+.reservation-success {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 120px;
+}
+
+.container {
+    max-width: 600px;
+    margin: auto;
+}
+
+h1 {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+
+.steps {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    gap: 20px;
+}
+
+.step {
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    font-size: 18px;
+    letter-spacing: 0.5px;
+}
+
+    .step span {
+        display: inline-block;
+        background: #000;
+        color: #fff;
+        border-radius: 50%;
+        width: 22px;
+        height: 22px;
+        line-height: 22px;
+        font-size: 13px;
+        margin-right: 8px;
+    }
+
+.line {
+    width: 40px;
+    height: 2px;
+    background: #ccc;
+}
+
+.content p {
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+.bold {
+    text-align: center;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.small {
+    font-size: 12px;
+    color: #444;
+    margin-top: 20px;
+}
+
+.verify-link {
+    display: block;
+    margin: 8px auto 30px;
+    font-size: 13px;
+    color: #111;
+    text-decoration: underline;
+}
+
+.back-button {
+    padding: 12px 24px;
+    border: 2px solid #000;
+    background: transparent;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 14px;
+    height: 60px;
+    width: 45%;
+    margin-top: 20px;
+}
+
+.content {
+    padding: 20px;
+    border-radius: 5px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.text-danger {
+    font-size: 10px;
+}
+
+.form-floating > .form-control, .form-floating > .form-control-plaintext {
+    font-family: "Termina Test", sans-serif;
+    background-color: transparent;
+    padding: 12px 8px;
+    font-size: 16px;
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid #000;
+    border-radius: 0;
+    outline: none;
+    box-shadow: none;
+}
+
+.mb-4 {
+    margin-bottom: 1.5rem !important;
+    flex-direction: column;
+}
+
+.mb-3 {
+    margin-bottom: 0rem !important;
+}
+
+.g-3, .gy-3 {
+    --bs-gutter-y: 0rem !important;
+}
+
+.form-group-left,
+.form-group-right {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 350px;
+}
+
+    .form-group-left input,
+    .form-group-left select,
+    .form-group-right select {
+        width: 100%;
+        padding: 8px 12px;
+        font-size: 12px;
+        border: 1px solid #000;
+        box-sizing: border-box;
+    }
+
+    .form-group-left label,
+    .form-group-right label {
+        font-size: 12px;
+        margin-bottom: 6px;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+    }
+
+@media (max-width: 768px) {
+    .reservation-form-section, .reservation-form-success, .reservation-form-content {
+        padding: 30px 0;
+        margin: 0 15px;
+    }
+
+    .reservation-title {
+        font-size: 30px;
+        text-align: center;
+    }
+
+    .form-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="date"],
+    select,
+    .verification-input {
+        max-width: 100%;
+    }
+
+    .submit-button {
+        padding: 15px 80px;
+        font-size: 12px;
+    }
+
+    .steps {
+        gap: 10px;
+    }
+
+    .divider {
+        display: none;
+    }
+
+    .visitors-select {
+        gap: 10px;
+    }
+
+    .date-input-horizontal,
+    .time-input-horizontal {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+        .date-input-horizontal input,
+        .time-input-horizontal input {
+            width: 100%;
+        }
+
+    .back-button {
+        width: 100%;
+    }
+
+    .consent-checkbox {
+        align-items: flex-start;
+        padding: 0 10px;
+    }
+
+    .countdown-container {
+        width: 120px;
+        height: 120px;
+    }
+
+    .submit-button {
+        padding: 12px 50px;
+        font-size: 11px;
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .form-row {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .reservation-title {
+        font-size: 30px;
+    }
+
+    .step {
+        font-size: 16px;
+    }
+
+        .step span {
+            width: 18px;
+            height: 18px;
+            font-size: 11px;
+            line-height: 18px;
+        }
+
+    .submit-button {
+        padding: 12px 50px;
+        font-size: 11px;
+    }
+
+    .back-button {
+        font-size: 13px;
+        height: 50px;
+    }
+
+    .countdown-container {
+        width: 100px;
+        height: 100px;
+    }
+
+    h1 {
+        font-size: 22px;
+    }
+
+    .content p {
+        font-size: 14px;
+    }
+
+    .verify-link {
+        font-size: 12px;
+    }
+
+    .reservation-success {
+        margin-top: 60px;
+    }
+
+    .time-text {
+        font-size: 12px;
+    }
+
+    .submit-button {
+        padding: 12px 50px;
+        font-size: 11px;
+        width: 100%;
+    }
+}
+
+@media (max-width: 320px) {
+
+    .time-text {
+        font-size: 10px;
+    }
+
+    .submit-button {
+        padding: 12px 50px;
+        font-size: 11px;
+        width: 100%;
+    }
+}
+
+.submit-button:disabled {
+    background-color: #cccccc;
+    color: #666666;
+    cursor: not-allowed;
+    opacity: 0.7;
+    border: 1px solid #999999;
+    box-shadow: none;
+    text-shadow: none;
+}
+
+    .submit-button:disabled:hover,
+    .submit-button:disabled:active {
+        background-color: #cccccc;
+        color: #666666;
+        cursor: not-allowed;
+    }
+
+
+.resend-code-container {
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+#resendCodeBtn {
+    padding: 5px 10px;
+    font-size: 0.9em;
+    border: none;
+    background: none;
+    color: #007bff;
+    text-decoration: underline;
+    cursor: pointer;
+    display: inline-block
+}
+
+    #resendCodeBtn:disabled {
+        color: #999999;
+        cursor: not-allowed;
+        text-decoration: none;
+        opacity: 0.7;
+    }
+
+    #resendCodeBtn:not(:disabled):hover {
+        color: #0056b3;
+        text-decoration: underline;
+    }
+
+    #resendCodeBtn:not(:disabled):active {
+        color: #004085;
+    }
+
+
+
+.dropdown-horizontal {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    min-width: 400px;
+    max-width: 450px;
+}
+
+    .dropdown-horizontal label {
+        white-space: nowrap;
+        font-size: 12px;
+        min-width: 60px;
+    }
+
+.dropdown-horizontal-slot {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    min-width: 400px;
+    max-width: 450px;
+}
+
+    .dropdown-horizontal-slot label {
+        white-space: nowrap;
+        font-size: 12px;
+        min-width: 60px;
+    }
+
+
+@media (max-width: 768px) {
+    .date-input-horizontal,
+    .time-input-horizontal,
+    .dropdown-horizontal,
+    .dropdown-horizontal-slot {
+        flex: 1 1 100%;
+        max-width: 100%;
+        min-width: unset;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 5px;
+    }
+
+        .date-input-horizontal input,
+        .time-input-horizontal input,
+        .dropdown-horizontal select,
+        .dropdown-horizontal-slot select {
+            font-size: 10px !important;
+            padding: 7px 4px !important;
+            height: auto !important;
+            width: 100%;
+        }
+
+        .dropdown-horizontal-slot select {
+            margin: 0;
+            float: none;
+            display: block;
+        }
+}
+@media (max-width: 600px) {
+    .form-row {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
